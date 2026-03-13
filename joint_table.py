@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title="حاسبة جدول الحياة المشترك", layout="wide")
+st.set_page_config(page_title="جدول الحياة والوفاة لشخصين", layout="wide")
 
-st.title("👥 حاسبة احتمالات الحياة والوفاة المشتركة")
+st.title("👥 حاسبة احتمالات الحياة والوفاة لشخصين")
 
 # مدخلات الأعمار
 c1, c2, c3 = st.columns(3)
@@ -46,4 +46,5 @@ if st.button("📊 حساب النتائج الاكتوارية"):
     st.dataframe(res_df.style.format("{:.5f}"), height=400)
     
     # رسم بياني توضيحي
+
     st.line_chart(res_df[["تراكمي: بقاء الاثنين", "p_xy_bar (بقاء شخص واحد)"]])
